@@ -1,16 +1,7 @@
-echo "# gettybalance" >> README.md
+echo "# gettybalanceApp" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/narvas12/gettybalance.git
-git push -u origin main
-
-
-echo "# getttybalance" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/narvas12/getttybalance.git
+git remote add origin https://github.com/narvas12/gettybalanceApp.git
 git push -u origin main
