@@ -56,7 +56,7 @@
         integrity="sha512-..." crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/fffce2b9a2.js" crossorigin="anonymous"></script>
-
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/style.css' %} ">
     <style>
         .reviews {
@@ -266,14 +266,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="#footer">About</a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'services' %}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary cta-btn " href="{%  url 'apply-now' %}">Become A partner</a>
@@ -282,16 +282,16 @@
                 <li class="nav-item">
                     <a class="btn btn-primary cta-btn btn-red-bg" href="{%  url 'apply-now' %}">Apply Now</a>
                 </li>
-
+                <div id="google_translate_element"></div>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <span class="navbar-text">
-                        Contact: loanassistance@jettybalance.com | +1 (605)824-1334
+                        Contact: loanassistance@jettybalance.com | 
                     </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="t.me/16059822330"><i class="fab fa-whatsapp"></i></a>
+                    <a class="nav-link" href="https://wa.me/+16058241334"><i class="fab fa-whatsapp"> +1 (605)824-1334</i></a>
                 </li>
             </ul>
         </div>
@@ -605,10 +605,10 @@
                     business to get you more funding, better terms, and lower interest rates. We're available to explain
                     every step of the process from applications to your re-payment schedule!
                 </p>
-                <div class="btn btn-services">or...
-                    <a href="tel:+1234567890"><span><i class="fas fa-phone"> </i></span>
-                        <span class="color-red"> Give Us a Call: +1 (605)824-1334</span></a>
-                </div>
+                
+                    <a href="https://wa.me/+16058241334" class="cta color-red"  target="_blank">or... <span><i class='bx bxl-whatsapp'></i></span style="color:red;"> Give Us a
+                        Call:  +1 (605)824-1334</a>
+                
             </div>
             <div class="why-us-img">
                 <img src="https://tinypic.host/images/2023/06/30/business-financing-advisor.png" alt="" width="90%">
@@ -837,7 +837,7 @@
                     <div class="contact">
                         <h5>Contact Info</h5>
                         <a href="email:loanassistance@jettybalance.com">Email: loanassistance@jettybalance.com</a> <br>
-                        <a href="tel:+16058241334"><span><i class="fas fa-phone"> </i></span> Give Us a Call: +1 (605)824-1334</a>
+                        <a href="https://wa.me/+16058241334"  target="_blank"><span><i class='bx bxl-whatsapp'></i></span> Give Us a Call: +1 (605)824-1334</a>
                         
                     </div>
 
@@ -845,11 +845,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <ul class="social-icons">
-                        <li><a href="t.me/16059822330"><i class="fab fa-whatsapp"></i></a></li>
-                    </ul>
-                </div>
+                
                 <div class="col-md-6 text-md-right">
                     <a class="btn btn-primary cta-btn btn-red-bg" href="{% url 'apply-now' %}">Apply Now</a>
                 </div>
@@ -972,6 +968,12 @@ body {
     margin-left: 10px;
 }
 
+
+.cta{
+    background: red;
+    padding:0.5rem  1rem;
+    border-radius: 2rem;
+}
 /*---------------- END NAV ----------- */
 
 .carousel-item {
@@ -1016,6 +1018,10 @@ body {
     border-radius: 30px;
     font-weight: lighter;
     border: 1px solid #f71313;
+}
+
+.btn i{
+    color: #f71313;
 }
 
 .btn:hover {
@@ -1379,6 +1385,17 @@ input {
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
     <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+ 
+    <script type="text/javascript"src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
 </body>
 
 </html>

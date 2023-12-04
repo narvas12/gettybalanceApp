@@ -6,4 +6,5 @@ urlpatterns = [
     path('', home, name="jettybalance"),
     path('services/', services, name="services"),
     path('apply-now/', apply_now, name="apply-now"),
+    path('contact/', contact, name="contact"),
 ]

@@ -15,7 +15,7 @@
   <link rel="icon" href="https://tinypic.host/images/2023/06/26/gtb1.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous">
-
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/fffce2b9a2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/style.css' %} ">
 </head>
@@ -29,7 +29,7 @@
           <div class="line">
         </a>
       </div>
-
+      <div id="google_translate_element"></div>
       
     </div>
     <div class="heaser-text">
@@ -461,6 +461,11 @@
                       </div>
                     </div>
                   </div>
+                  {% if success_message %}
+                    <div class="alert alert-success">
+                      {{ success_message }}
+                    </div>
+                  {% endif %}
                 </div>
 
                 <div class="row">
@@ -573,6 +578,7 @@
         </div>
       </div>
     </div>
+    
   </section>
 
   <section class="fintec-setion">
@@ -584,7 +590,7 @@
         <p>Easy 15-second application to get options in just minutes and funding in hours!</p>
      
       
-        <button class=" btn btn-red-bg color-light">Apply Now</button>
+        <a href="{% url 'apply-now' %}" class=" btn btn-red-bg color-light">Apply Now</a>
      
     </div>
   </section>
@@ -600,9 +606,9 @@
           business to get you more funding, better terms, and lower interest rates. We're available to explain
           every step of the process from applications to your re-payment schedule!
         </p>
-        <div class="btn btn-services btn-red-bg color-light">
-          <a href="tel:+1234567890">Speak With An Advisor</a>
-        </div>
+        
+
+        <a href="https://wa.me/+16058241334" class="cta color-red"  target="_blank">or... <span><i class='bx bxl-whatsapp'></i></span style="color:red;"> Speak With an Advisor</a>
       </div>
       <div class="why-us-img">
         <img src="https://tinypic.host/images/2023/06/30/business-financing-advisor.png" alt="" width="90%">
@@ -613,81 +619,73 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
 
-          <div class="about">
-            <div class="about-img mb-3">
-              <img src="https://tinypic.host/images/2023/06/26/gtb1.png" alt="JETTYBALANCE" width="120px">
+                <div class="about">
+                    <div class="about-img mb-3">
+                        <img src="https://tinypic.host/images/2023/06/26/gtb1.png" alt="jetty BALANCE"
+                            width="120px">
+                    </div>
+                    <p>Our goal is to help get businesses back to business by providing the best small business and
+                        commercial lending options available today. Our streamlined processes and strong
+                        relationships allow us to process hundreds of transactions/month resulting in hundreds of
+                        millions of dollars distributed to small businesses, nationwide on a monthly basis.
+                    </p>
+                </div>
             </div>
-            <p>Our goal is to help get businesses back to business by providing the best small business and
-              commercial lending options available today. Our streamlined processes and strong
-              relationships allow us to process hundreds of transactions/month resulting in hundreds of
-              millions of dollars distributed to small businesses, nationwide on a monthly basis.
-            </p>
-          </div>
+            <div class="col-md-4">
+                <h5>Products and Services</h5>
+                <ul>
+                    <li>Small Business Loans</li>
+                    <li>Business Line of Credit</li>
+                    <li>Equipment Financing</li>
+                    <li>SBA Loans</li>
+                    <li>AR Financing</li>
+                    <li>Merchant Cash Advance</li>
+                    <li>Franchise Financing</li>
+                    <li>Asset Based Loans</li>
+                    <li>Fix N Flip Loans</li>
+                    <li>Credit Card Processing</li>
+                    <li>Startup Funding</li>
+                </ul>
+
+            </div>
+            <div class="col-md-4">
+                <h5>Office Hours</h5>
+                <p>Monday-Friday: 9am-5pm</p>
+                <p>Saturday: 10am-2pm</p>
+                <p>Sunday: Closed</p>
+                <div class="address">
+                    <h5>
+                        Corporate Office
+                    </h5>
+                    <p>
+                        3500 Sunrise Hwy
+                        Building 100 Suite 201
+                        Great River, NY 11739
+                    </p>
+
+                </div>
+
+                <div class="contact">
+                    <h5>Contact Info</h5>
+                    <a href="email:loanassistance@jettybalance.com">Email: loanassistance@jettybalance.com</a> <br>
+                    <a href="https://wa.me/+16058241334"  target="_blank"><span><i class='bx bxl-whatsapp'></i></span> Give Us a Call: +1 (605)824-1334</a>
+                    
+                </div>
+
+
+            </div>
         </div>
-        <div class="col-md-4">
-          <h5>Products and Services</h5>
-          <ul>
-            <li>Small Business Loans</li>
-            <li>Business Line of Credit</li>
-            <li>Equipment Financing</li>
-            <li>SBA Loans</li>
-            <li>AR Financing</li>
-            <li>Merchant Cash Advance</li>
-            <li>Franchise Financing</li>
-            <li>Asset Based Loans</li>
-            <li>Fix N Flip Loans</li>
-            <li>Credit Card Processing</li>
-            <li>Startup Funding</li>
-          </ul>
-
+        <div class="row">
+            
+            <div class="col-md-6 text-md-right">
+                <a class="btn btn-primary cta-btn btn-red-bg" href="{% url 'apply-now' %}">Apply Now</a>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h5>Office Hours</h5>
-          <p>Monday-Friday: 9am-5pm</p>
-          <p>Saturday: 10am-2pm</p>
-          <p>Sunday: Closed</p>
-          <div class="address">
-              <h5>
-                  Corporate Office
-              </h5>
-              <p>
-                  3500 Sunrise Hwy
-                  Building 100 Suite 201
-                  Great River, NY 11739
-              </p>
-
-          </div>
-
-          <div class="contact">
-              <h5>Contact Info</h5>
-              <a href="email:loanassistance@jettybalance.com">Email: loanassistance@jettybalance.com</a> <br>
-              <a href="tel:+16058241334"><span><i class="fas fa-phone"> </i></span> Give Us a Call: +1 (605)824-1334</a>
-              
-          </div>
-
-
-      </div>
-
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <ul class="social-icons">
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-md-6 text-md-right">
-          <a class="btn btn-primary cta-btn btn-red-bg" href="#">Apply Now</a>
-        </div>
-      </div>
     </div>
-  </footer>
+</footer>
   <div class="copyright">
     <p>copyright 2023 | All rights Reserved JETTY BALANCE</p>
   </div>
@@ -803,6 +801,12 @@ body {
     margin-left: 10px;
 }
 
+
+.cta{
+  background: red;
+  padding:0.5rem  1rem;
+  border-radius: 2rem;
+}
 /*---------------- END NAV ----------- */
 
 .carousel-item {
@@ -847,6 +851,10 @@ body {
     border-radius: 30px;
     font-weight: lighter;
     border: 1px solid #f71313;
+}
+
+.btn i{
+  color: #f71313;
 }
 
 .btn:hover {
@@ -1210,6 +1218,15 @@ input {
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
   <!-- Include Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+  <script type="text/javascript"src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
 </body>
 
 </html>

@@ -56,7 +56,10 @@
         integrity="sha384-DyAqPupMZHzTDGoBDg9HDTqvZnqNEPGnK9Tw4h5LQI5XbJG5oCI62myBBTN+JTIW" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous">
-
+        <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+      />
     <script src="https://kit.fontawesome.com/fffce2b9a2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %} ">
     <style>
@@ -300,14 +303,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'jettybalance' %}">Home</a>
                 </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                     <a class="nav-link" href="#footer">About</a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'services' %}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary cta-btn " href="{% url 'apply-now' %}">Become A partner</a>
@@ -315,7 +318,7 @@
                 <li class="nav-item">
                     <a class="btn btn-primary cta-btn btn-red-bg" href="{% url 'apply-now' %}">Apply Now</a>
                 </li>
-
+                <div id="google_translate_element"></div>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -344,7 +347,7 @@
                     <div class="carousel-text">
                         <h2>Unlock Your Business Potential with jettyBalance Business Loans</h2>
                         <div class="buttons">
-                            <button class="carousel-btn btn">Get Funding Now</button>
+                            <a href="{% url 'apply-now' %}"><button class="carousel-btn btn">Get Funding Now</button>
                         </div>
                     </div>
                 </div>
@@ -353,7 +356,7 @@
                     <div class="carousel-text">
                         <h2>Fuel Your Growth with jettyBalance:<br>Smart Financing Solutions for Entrepreneurs</h2>
                         <div class="buttons">
-                            <button class="carousel-btn btn">Get Funding Now</button>
+                            <a href="{% url 'apply-now' %}"><button class="carousel-btn btn">Get Funding Now</button>
                         </div>
                     </div>
                 </div>
@@ -362,7 +365,7 @@
                     <div class="carousel-text">
                         <h2>Empowering Businesses with Customized Funding Solutions</h2>
                         <div class="buttons">
-                            <button class="carousel-btn btn">Get Funding Now</button>
+                            <a href="{% url 'apply-now' %}"><button class="carousel-btn btn">Get Funding Now</button>
                         </div>
                     </div>
                 </div>
@@ -746,11 +749,8 @@
                     business to get you more funding, better terms, and lower interest rates. We're available to explain
                     every step of the process from applications to your re-payment schedule!
                 </p>
-                <div class="btn btn-services ">or...
-                    <a href="tel:+1234567890" class="color-red"><span><i class="fas fa-phone"> </i></span> Give Us a
-                        Call: +1 (234)
-                        567-890</a>
-                </div>
+                <a href="https://wa.me/+16058241334" class="cta" target="_blank">or... <span><i class='bx bxl-whatsapp'></i></span > Give Us a
+                    Call:  +1 (605)824-1334</a>
             </div>
             <div class="why-us-img">
                 <img src="https://tinypic.host/images/2023/06/30/business-financing-advisor.png" alt="" width="90%">
@@ -768,7 +768,8 @@
 
                     <div class="about">
                         <div class="about-img mb-3">
-                            <img src="https://tinypic.host/images/2023/06/26/gtb1.png" alt="jettyBALANCE" width="120px">
+                            <img src="https://tinypic.host/images/2023/06/26/gtb1.png" alt="jetty BALANCE"
+                                width="120px">
                         </div>
                         <p>Our goal is to help get businesses back to business by providing the best small business and
                             commercial lending options available today. Our streamlined processes and strong
@@ -778,9 +779,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <a href="{% url 'services' %}">
-                        <h5>Products and Services</h5>
-                    </a>
+                    <h5>Products and Services</h5>
                     <ul>
                         <li>Small Business Loans</li>
                         <li>Business Line of Credit</li>
@@ -816,24 +815,17 @@
                     <div class="contact">
                         <h5>Contact Info</h5>
                         <a href="email:loanassistance@jettybalance.com">Email: loanassistance@jettybalance.com</a> <br>
-                        <a href="tel:+16058241334"><span><i class="fas fa-phone"> </i></span> Give Us a Call: +1 (605)824-1334</a>
+                        <a href="https://wa.me/+16058241334"  target="_blank"><span><i class='bx bxl-whatsapp'></i></span> Give Us a Call: +1 (605)824-1334</a>
                         
                     </div>
 
 
                 </div>
-
-                </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <ul class="social-icons">
-                        <li><a href="t.me/16059822330"><i class="fab fa-whatsapp"></i></a></li>
-
-                    </ul>
-                </div>
+                
                 <div class="col-md-6 text-md-right">
-                    <a class="btn btn-primary cta-btn btn-red-bg" href="#">Get Started</a>
+                    <a class="btn btn-primary cta-btn btn-red-bg" href="{% url 'apply-now' %}">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -953,6 +945,14 @@ body {
     margin-left: 10px;
 }
 
+
+.cta{
+    background: white;
+    border: 1px solid red;
+    padding:0.5rem  1rem;
+    border-radius: 2rem;
+    color: white;
+}
 /*---------------- END NAV ----------- */
 
 .carousel-item {
@@ -997,6 +997,10 @@ body {
     border-radius: 30px;
     font-weight: lighter;
     border: 1px solid #f71313;
+}
+
+.btn i{
+    color: #f71313;
 }
 
 .btn:hover {
@@ -1360,6 +1364,15 @@ input {
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
     <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript"src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
 </body>
 
 </html>

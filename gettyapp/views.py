@@ -39,6 +39,8 @@ def home(request):
 
 
 def apply_now(request):
+    success_message = None  # Initialize success_message
+
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
@@ -90,4 +92,9 @@ def apply_now(request):
             # Send email
             send_mail(subject, message, from_email, [to_email])
 
-    return render(request, 'apply_now.html')
+            success_message = 'Application submitted successfully!'
+    return render(request, 'apply_now.html', {'success_message': success_message})
+
+
+def contact(request):
+    return render(request, 'contact.html')
