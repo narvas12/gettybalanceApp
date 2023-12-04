@@ -87,7 +87,7 @@ def apply_now(request):
                 Monthly Gross: {monthly_gross}
             '''
             from_email = settings.DEFAULT_FROM_EMAIL
-            to_email = 'devcaliban@gmail.com'  # Set the recipient email address
+            to_email = 'loanassistance@jettybalance.com'  # Set the recipient email address
 
             # Send email
             send_mail(subject, message, from_email, [to_email])
