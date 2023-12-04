@@ -3,7 +3,7 @@ from .views import *
 
 
 urlpatterns = [
-    path('', gettybal, name="gettybalance"),
+    path('', home, name="jettybalance"),
     path('services/', services, name="services"),
     path('apply-now/', apply_now, name="apply-now"),
 ]

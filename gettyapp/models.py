@@ -24,6 +24,7 @@ class Review(models.Model):
     email = models.EmailField()
     comment = models.TextField()
     rating = models.IntegerField(choices=((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5')))
+    image_url = models. URLField(null=True)
     approved = models.BooleanField(default=False)
 
     def __str__(self):

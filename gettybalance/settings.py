@@ -138,3 +138,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'devcaliban@gmail.com' # Replace with your Gmail address
 EMAIL_HOST_PASSWORD = 'tpatxaoryaiuzzrp' # Replace with your Gmail password or app password
 EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'loanassistance@jettybalance.com'

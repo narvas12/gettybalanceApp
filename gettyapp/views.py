@@ -12,7 +12,7 @@ def services(request):
 
 from django.contrib import messages
 
-def gettybal(request):
+def home(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
